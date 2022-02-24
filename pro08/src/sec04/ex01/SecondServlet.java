@@ -36,14 +36,15 @@ public class SecondServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		   response.setContentType("text/html;charset=utf-8");
-		      PrintWriter out = response.getWriter();
-		      out.println("<html><body>");
-		      String name=request.getParameter("name");
-		      out.println("</body></html>");
-		      out.println("이름:"+name);
-		      out.println("<br>");
-		      out.println("</body></html>");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		String address = (String) request.getAttribute("address");
+		out.println("<html><body>");
+		out.println("주소:" + address);
+		out.println("<br>");
+		out.println("redirect를 이용한 바인딩 실습입니다.");
+		out.println("</body></html>");
 	}
 
 }
