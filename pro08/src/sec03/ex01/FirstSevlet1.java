@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class FirstSevlet1
  */
-@WebServlet("/first")
+//@WebServlet("/first")
 public class FirstSevlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -36,9 +36,10 @@ public class FirstSevlet1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 response.setContentType("text/html;charset=utf-8");
-	      PrintWriter out = response.getWriter();
-	      response.sendRedirect("second?name=lee");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		request.setAttribute("address", "서울시 성북구");
+		response.sendRedirect("second");
 	
 	}
 

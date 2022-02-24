@@ -1,4 +1,4 @@
-package sec02.ex02;
+package sec04.ex01;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SecondServlet
+ * Servlet implementation class FirstSevlet1
  */
-//@WebServlet(name = "SecondServlet2", urlPatterns = { "/second" })
-public class SecondServlet extends HttpServlet {
+//@WebServlet("/first")
+public class FirstSevlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -36,14 +36,10 @@ public class SecondServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		   response.setContentType("text/html;charset=utf-8");
-		      PrintWriter out = response.getWriter();
-		      out.println("<html><body>");
-		      String name=request.getParameter("name");
-		      out.println("</body></html>");
-		      out.println("¿Ã∏ß:"+name);
-		      out.println("<br>");
-		      out.println("</body></html>");
+		 response.setContentType("text/html;charset=utf-8");
+	      PrintWriter out = response.getWriter();
+	      response.sendRedirect("second?name=lee");
+	
 	}
 
 }
