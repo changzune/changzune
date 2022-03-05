@@ -32,7 +32,7 @@ public class SessionTest extends HttpServlet {
 		out.println("세션 아이디 : " + session.getId() + "<br>");
 		out.println("최초 세션 생성 시각 : " + new Date(session.getCreationTime()) + "<br>");
 		out.println("최근 세션 접근 시각 : " + new Date(session.getLastAccessedTime()) + "<br>");
-		out.println("세션 유효 시간 : " + session.getMaxInactiveInterval() + "<br>");
+		out.println("세션 유효 시간 : " + session.getMaxInactiveInterval() + "<br>");//세션유효시간 기본 30분
 		if (session.isNew()) {
 			out.print("새 세션이 만들어졌습니다.");
 		}
